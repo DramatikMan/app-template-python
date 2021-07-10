@@ -1,0 +1,12 @@
+services:
+
+    jupyter:
+
+        build:
+            context: .
+            target: final
+        volumes:
+            - ./Pipfile:/project/Pipfile
+            - ./notebook:/project/notebook
+        ports:
+            - "8888:8888"
