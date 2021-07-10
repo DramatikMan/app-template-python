@@ -2,5 +2,6 @@
 
 ```bash
 $ git clone https://github.com/DramatikMan/containerized-notebook.git
+$ cd containerized-notebook
 $ docker-compose up --build
 ```
