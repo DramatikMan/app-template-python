@@ -4,7 +4,6 @@ services:
 
         build:
             context: .
-            target: final
         volumes:
             - ./Pipfile:/project/Pipfile
             - ./notebook:/project/notebook
