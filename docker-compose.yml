@@ -1,11 +1,11 @@
 services:
 
-    jupyter:
+  jupyter:
 
-        build:
-            context: .
-        volumes:
-            - ./Pipfile:/project/Pipfile
-            - ./notebook:/project/notebook
-        ports:
-            - "8888:8888"
+    build:
+      context: .
+    ports:
+     - "8888:8888"
+    volumes:
+     - ./notebook:/project/notebook
+     - ./pyproject.toml:/project/pyproject.toml

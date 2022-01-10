@@ -1,12 +1,12 @@
 ### ~ Python ~ ###
-**/.ipynb*
+**/__pycache__
+**/*.ipynb*
+
+### ~ Docker ~ ###
+*.yml
+**/.dockerignore
+**/Dockerfile
 
 ### ~ Git ~ ###
 .git*
 README.md
-LICENSE
-
-### ~ Docker ~ ###
-**/.dockerignore
-**/Dockerfile
-*.yml

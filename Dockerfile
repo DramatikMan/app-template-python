@@ -1,9 +1,9 @@
-FROM python:slim
+FROM python:3.10-slim
 SHELL ["/bin/bash", "-c"]
 WORKDIR /project
-COPY Pipfile .
-RUN pip install pipenv
-RUN mkdir .venv && pipenv install --skip-lock
-RUN pipenv run jt -t onedork
-RUN sed -i "s+width: 980px;+width: 97% !important;+g" ~/.jupyter/custom/custom.css
-CMD pipenv run jupyter notebook
+ENV PYTHONPATH "${PYTHONPATH}:/project"
+COPY pyproject.toml pyproject.toml
+COPY scripts scripts
+COPY notebook notebook
+RUN scripts/poetry_install.sh
+CMD scripts/run_jupyter.sh
