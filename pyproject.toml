@@ -16,3 +16,5 @@ flake8 = "*"
 
 [tool.poetry-exec-plugin.commands]
 jupyter = "jupyter notebook --allow-root --no-browser --ip 0.0.0.0 --NotebookApp.token=''"
+type_check = "mypy notebook --ignore-missing-imports --show-error-codes --strict"
+lint = "flake8 notebook --count --statistics --show-source"
