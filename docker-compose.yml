@@ -8,4 +8,3 @@ services:
      - "8888:8888"
     volumes:
      - ./notebook:/project/notebook
-     - ./pyproject.toml:/project/pyproject.toml
