@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 pip install poetry
 pip install poetry-exec-plugin
