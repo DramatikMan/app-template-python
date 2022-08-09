@@ -11,10 +11,25 @@ jupyterthemes = "*"
 pandas = "*"
 
 [tool.poetry.dev-dependencies]
-mypy = "*"
+autoflake = "*"
+black = "*"
 flake8 = "*"
+flake8-bugbear = "*"
+isort = "*"
+mypy = "*"
 
 [tool.poetry-exec-plugin.commands]
+autoflake = "autoflake -i -r --remove-all-unused-imports"
+black = "black --line-length=79"
+flake8 = "flake8"
+isort = "isort"
 jupyter = "jupyter notebook --allow-root --no-browser --ip 0.0.0.0 --NotebookApp.token=''"
-type_check = "mypy notebook --ignore-missing-imports --show-error-codes --strict"
-lint = "flake8 notebook --count --statistics --show-source"
+mypy = "mypy --strict"
+
+[tool.isort]
+multi_line_output = 3
+profile = "black"
+
+[tool.mypy]
+ignore_missing_imports = true
+show_error_codes = true

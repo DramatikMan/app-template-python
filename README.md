@@ -3,5 +3,5 @@
 ```bash
 $ git clone https://github.com/DramatikMan/notebook-environment.git
 $ cd notebook-environment
-$ docker compose up --build
+$ docker compose up
 ```
