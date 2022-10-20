@@ -4,9 +4,10 @@
 
 ### ~ Docker ~ ###
 *.yml
-**/.dockerignore
-**/Dockerfile
+.dockerignore
+Dockerfile
 
 ### ~ Git ~ ###
 .git*
 README.md
+LICENSE

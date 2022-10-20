@@ -7,24 +7,15 @@ authors = ["Sergey Pavlov <self@sergeypavlov.dev>"]
 [tool.poetry.dependencies]
 python = "~3.10"
 jupyter = "*"
-jupyterthemes = "*"
 pandas = "*"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 autoflake = "*"
 black = "*"
 flake8 = "*"
 flake8-bugbear = "*"
 isort = "*"
 mypy = "*"
-
-[tool.poetry-exec-plugin.commands]
-autoflake = "autoflake -i -r --remove-all-unused-imports"
-black = "black --line-length=79"
-flake8 = "flake8"
-isort = "isort"
-jupyter = "jupyter notebook --allow-root --no-browser --ip 0.0.0.0 --NotebookApp.token=''"
-mypy = "mypy --strict"
 
 [tool.isort]
 multi_line_output = 3
