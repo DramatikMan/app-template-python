@@ -4,11 +4,11 @@ WORKDIR /project
 ENV PYTHONPATH "${PYTHONPATH}:/project"
 
 RUN apt update && apt install build-essential -y \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN pip install poetry \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip install poetry \
     && poetry config virtualenvs.in-project true \
     && mkdir .venv
+
 COPY pyproject.toml poetry.lock* ./
 RUN poetry install --no-root
 

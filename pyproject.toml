@@ -11,7 +11,7 @@ pandas = "*"
 
 [tool.poetry.group.dev.dependencies]
 autoflake = "*"
-black = "*"
+black = {extras = ["jupyter"], version = "*"}
 flake8 = "*"
 flake8-bugbear = "*"
 isort = "*"
