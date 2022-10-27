@@ -1,4 +1,3 @@
 [flake8]
 count = True
-show_source = True
 statistics = True

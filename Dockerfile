@@ -3,7 +3,7 @@ SHELL ["/bin/bash", "-c"]
 WORKDIR /project
 ENV PYTHONPATH "${PYTHONPATH}:/project"
 
-RUN apt update && apt install build-essential -y \
+RUN apt update && apt install make -y \
     && rm -rf /var/lib/apt/lists/* \
     && pip install poetry \
     && poetry config virtualenvs.in-project true \
