@@ -8,7 +8,7 @@ jupyter:
 
 check_code:
 	autoflake -i -r --remove-all-unused-imports $(path)
-	isort $(path)
 	black --line-length=79 $(path)
+	isort $(path)
 	flake8 --show-source $(path)
 	mypy --strict $(path)
