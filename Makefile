@@ -6,6 +6,10 @@ jupyter:
 	--NotebookApp.token='' \
 	notebook
 
+check_notebook:
+	autoflake -i -r --remove-all-unused-imports $(path)
+	black --line-length=79 $(path)
+
 check_code:
 	autoflake -i -r --remove-all-unused-imports $(path)
 	black --line-length=79 $(path)
