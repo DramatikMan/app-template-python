@@ -5,7 +5,7 @@ description = ""
 authors = ["Sergey Pavlov <self@sergeypavlov.dev>"]
 
 [tool.poetry.dependencies]
-python = "~3.10"
+python = "~3.11"
 jupyter = "*"
 pandas = "*"
 

@@ -7,7 +7,7 @@
 .dockerignore
 Dockerfile
 
-### ~ Git ~ ###
+### ~ git ~ ###
 .git*
 README.md
 LICENSE
