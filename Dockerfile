@@ -7,6 +7,7 @@ RUN apt update && apt install make -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && pip install poetry \
     && poetry config virtualenvs.in-project true \
+    && poetry config installer.modern-installation false \
     && mkdir .venv
 
 COPY pyproject.toml poetry.lock* ./
