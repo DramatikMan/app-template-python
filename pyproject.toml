@@ -1,16 +1,13 @@
-[tool.pdm]
-
 [project]
 name = ""
 version = ""
 description = ""
 authors = [{name = "Sergey Pavlov", email = "self@sergeypavlov.dev"}]
+requires-python = ">=3.11"
 dependencies = [
     "jupyter>=1.0.0",
     "pandas>=1.5.3",
 ]
-requires-python = ">=3.11"
-license = {text = "MIT"}
 
 [tool.pdm.dev-dependencies]
 dev = [
