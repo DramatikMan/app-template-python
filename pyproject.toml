@@ -1,25 +1,35 @@
-[tool.poetry]
-name = "notebook-environment"
-version = "0.1.0"
+[tool.pdm]
+
+[project]
+name = ""
+version = ""
 description = ""
-authors = ["Sergey Pavlov <self@sergeypavlov.dev>"]
+authors = [{name = "Sergey Pavlov", email = "self@sergeypavlov.dev"}]
+dependencies = [
+    "jupyter>=1.0.0",
+    "pandas>=1.5.3",
+]
+requires-python = ">=3.11"
+license = {text = "MIT"}
 
-[tool.poetry.dependencies]
-python = "~3.11"
-jupyter = "*"
-pandas = "*"
+[tool.pdm.dev-dependencies]
+dev = [
+    "black[jupyter]>=23.1.0",
+    "mypy>=1.1.1",
+    "ruff>=0.0.259",
+]
 
-[tool.poetry.group.dev.dependencies]
-autoflake = "*"
-black = {extras = ["jupyter"], version = "*"}
-flake8 = "*"
-flake8-bugbear = "*"
-isort = "*"
-mypy = "*"
+[tool.pdm.scripts]
+jupyter = "jupyter notebook --allow-root --no-browser --ip 0.0.0.0 --NotebookApp.token='' notebook"
+lint = {composite = ["black notebook", "ruff --fix notebook", "mypy --strict notebook"]}
 
-[tool.isort]
-multi_line_output = 3
-profile = "black"
+[tool.black]
+line-length = 100
+quiet = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
 
 [tool.mypy]
 ignore_missing_imports = true

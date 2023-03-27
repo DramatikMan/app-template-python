@@ -3,16 +3,8 @@ SHELL ["/bin/bash", "-c"]
 WORKDIR /project
 ENV PYTHONPATH "${PYTHONPATH}:/project"
 
-RUN apt update && apt install make -y --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/* \
-    && pip install poetry \
-    && poetry config virtualenvs.in-project true \
-    && poetry config installer.modern-installation false \
-    && mkdir .venv
-
-COPY pyproject.toml poetry.lock* ./
-RUN poetry install --no-root
-
-COPY Makefile .flake8 ./
+RUN pip install pdm && pdm config venv.in_project true
+COPY pyproject.toml pdm.lock* ./
+RUN pdm install --no-self
 COPY notebook notebook
-CMD make jupyter
+CMD pdm run jupyter
