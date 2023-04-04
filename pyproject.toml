@@ -5,15 +5,15 @@ description = ""
 authors = [{name = "Sergey Pavlov", email = "self@sergeypavlov.dev"}]
 requires-python = ">=3.11"
 dependencies = [
-    "jupyter>=1.0.0",
-    "pandas>=1.5.3",
+    "jupyter",
+    "pandas",
 ]
 
 [tool.pdm.dev-dependencies]
 dev = [
-    "black[jupyter]>=23.1.0",
-    "mypy>=1.1.1",
-    "ruff>=0.0.259",
+    "black[jupyter]",
+    "mypy",
+    "ruff",
 ]
 
 [tool.pdm.scripts]
