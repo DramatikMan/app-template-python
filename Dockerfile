@@ -8,6 +8,5 @@ RUN pip install pdm \
     && pdm config venv.in_project true
 
 COPY pyproject.toml pdm.lock* ./
-RUN pdm install --no-self
-COPY notebook notebook
-CMD pdm run jupyter
+RUN pdm sync --no-self
+CMD sleep infinity
