@@ -1,7 +1,7 @@
 [project]
 name = "app"
 version = "1.0.0"
-description = "A containerized Python w/ Jupyter environment."
+description = "A containerized Python && Jupyter environment."
 authors = [{name = "Sergey Pavlov", email = "self@sergeypavlov.dev"}]
 requires-python = ">=3.11"
 dependencies = [
