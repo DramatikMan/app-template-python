@@ -773,7 +773,7 @@ summary = "Pure python rfc3986 validator"
 
 [[package]]
 name = "ruff"
-version = "0.0.270"
+version = "0.0.272"
 requires_python = ">=3.7"
 summary = "An extremely fast Python linter, written in Rust."
 
