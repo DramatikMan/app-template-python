@@ -13,8 +13,8 @@ dependencies = [
 dev = [
     "black[jupyter]>=23.3.0",
     "isort>=5.12.0",
-    "mypy>=1.3.0",
-    "ruff>=0.0.272",
+    "mypy>=1.4.0",
+    "ruff>=0.0.276",
 ]
 
 [tool.pdm.scripts]
