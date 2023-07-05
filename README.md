@@ -1,7 +1,7 @@
-<h1>Containerized Jupyter notebook</h1>
+# Containerized Python environment
 
 ```bash
-$ git clone https://github.com/DramatikMan/notebook-environment.git
-$ cd notebook-environment
+$ git clone https://github.com/DramatikMan/python-environment.git
+$ cd python-environment
 $ docker compose up
 ```
