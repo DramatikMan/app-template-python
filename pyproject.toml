@@ -1,13 +1,10 @@
 [project]
 name = "app"
 version = "1.0.0"
-description = "A containerized Python && Jupyter environment."
+description = "A containerized Python environment."
 authors = [{name = "Sergey Pavlov", email = "self@sergeypavlov.dev"}]
 requires-python = ">=3.11"
-dependencies = [
-    "jupyter>=1.0.0",
-    "pandas>=2.0.1",
-]
+dependencies = []
 
 [tool.pdm.dev-dependencies]
 dev = [
@@ -18,8 +15,7 @@ dev = [
 ]
 
 [tool.pdm.scripts]
-jupyter = "jupyter notebook --allow-root --no-browser --ip 0.0.0.0 --NotebookApp.token='' notebook"
-lint = {composite = ["black", "isort", "ruff", "mypy --strict"]} # pdm run lint notebook
+lint = {composite = ["black app", "isort app", "ruff app", "mypy --strict app"]}
 
 [tool.black]
 line-length = 100
