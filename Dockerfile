@@ -7,6 +7,6 @@ RUN pip install pdm \
     && pdm config check_update false \
     && pdm config venv.in_project true
 
-COPY pyproject.toml pdm.lock* ./
+COPY pyproject.toml pdm.lock ./
 RUN pdm sync --no-self
 CMD sleep infinity
