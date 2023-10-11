@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 SHELL ["/bin/bash", "-c"]
 WORKDIR /project
 ENV PYTHONPATH "${PYTHONPATH}:/project"
