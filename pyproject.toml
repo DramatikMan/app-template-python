@@ -18,10 +18,13 @@ dev = [
 ]
 
 [tool.pdm.scripts]
+lint-path = {composite = [
+    "ruff format -q",
+    "ruff check --fix -q",
+    "mypy"
+]}
 lint = {composite = [
-    "ruff format app -q",
-    "ruff check app --fix -q",
-    "mypy app"
+    "lint-path app"
 ]}
 
 [tool.ruff]
