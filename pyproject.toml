@@ -15,6 +15,7 @@ dev = [
     "mypy>=1.6.1",
     "pytest>=7.4.3",
     "pytest-cov>=4.1.0",
+    "coverage>=7.3.2",
 ]
 
 [tool.pdm.scripts]
@@ -24,8 +25,18 @@ lint-path = {composite = [
     "mypy"
 ]}
 lint = {composite = [
-    "lint-path app"
+    "lint-path app",
+    "lint-path tests"
 ]}
+test = {composite = [
+    "pytest -qq --cov=app --cov-report='' tests",
+    "coverage html -q --data-file='.coverage'"
+]}
+
+[tool.coverage.run]
+omit = ["*/__init__.py"]
+[tool.coverage.html]
+directory = "htmlcov"
 
 [tool.ruff]
 line-length = 100
