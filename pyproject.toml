@@ -34,6 +34,8 @@ show-source = true
 select = ["E4", "E7", "E9", "F", "B", "Q"]
 fixable = ["ALL"]
 unfixable = []
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = []
 
 [tool.ruff.format]
 quote-style = "double"
