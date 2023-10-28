@@ -56,3 +56,6 @@ warn_required_dynamic_classes = true
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
+
+[tool.pdm.build]
+includes = ["app"]
