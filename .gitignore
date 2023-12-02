@@ -1,13 +1,14 @@
-### ~ private ~ ###
-*.env
+### ~ secret ~ ###
+# *.env
 
 ### ~ Python ~ ###
 __pycache__
 .mypy_cache
+.pytest_cache
 .ruff_cache
 *.ipynb*
-/htmlcov
+/.pdm_build
 
-### ~ Docker ~ ###
-/*.y*ml
-!/docker-compose.yml
+### ~ development ~ ###
+# /scripts
+/htmlcov

@@ -1,23 +1,27 @@
 [project]
-name = "app"
+name = "app-template-python"
 version = "1.0.0"
-description = "Python environment."
+description = "App template: Python."
 authors = [{name = "Sergey Pavlov", email = "self@sergeypavlov.dev"}]
 requires-python = ">=3.12"
 dependencies = [
-    "pydantic>=2.5.1",
+    "pydantic>=2.5.2",
     "pydantic-settings>=2.1.0",
+    "litestar>=2.4.2",
+    "typer>=0.9.0",
+    "uvicorn[standard]>=0.24.0.post1",
+    "gunicorn>=21.2.0",
 ]
 
-[tool.pdm]
 [tool.pdm.dev-dependencies]
 dev = [
     "ruff>=0.1.6",
-    "mypy>=1.7.0",
+    "mypy>=1.7.1",
     "pytest>=7.4.3",
     "pytest-cov>=4.1.0",
     "coverage>=7.3.2",
     "isort>=5.12.0",
+    "httpx>=0.25.2",
 ]
 
 [tool.pdm.scripts]
@@ -36,8 +40,9 @@ test = {composite = [
     "coverage html -q --data-file='.coverage'"
 ]}
 
-[tool.pdm.build]
-includes = ["app"]
+
+[project.scripts]
+app = "app.cli:entrypoint"
 
 [tool.coverage.run]
 omit = ["*/__init__.py"]
@@ -85,4 +90,3 @@ warn_required_dynamic_classes = true
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
-

@@ -1,0 +1,21 @@
+services:
+
+  main:
+    build:
+      args:
+        DOCKER_REGISTRY: "https://docker.io/library"
+        PYTHON_INDEX_URL: "https://pypi.org/simple"
+        build_env: dev
+      context: .
+      target: builder
+    command: ["sleep", "infinity"]
+    env_file:
+      - values.env
+    ports:
+      - "8890:8080"
+    volumes:
+     - ./app:/project/app
+     - ./tests:/project/tests
+     - ./htmlcov:/project/htmlcov
+     - ./scripts:/project/scripts
+     - ./values.env:/project/values.env

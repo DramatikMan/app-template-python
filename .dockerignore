@@ -1,11 +1,15 @@
+### ~ secret ~ ###
+*.env
+
 ### ~ Python ~ ###
 **/__pycache__
 **/.mypy_cache
+**/.pytest_cache
 **/.ruff_cache
 **/*.ipynb*
+.pdm_build
 
 ### ~ Docker ~ ###
-*.yml
 .dockerignore
 Dockerfile
 
@@ -13,3 +17,8 @@ Dockerfile
 .git*
 LICENSE
 README.md
+
+### ~ development ~ ###
+docker-compose.yaml
+scripts
+htmlcov

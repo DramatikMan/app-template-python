@@ -1,9 +1,0 @@
-services:
-
-  dev:
-    build:
-      context: .
-    volumes:
-     - ./app:/project/app
-     - ./tests:/project/tests
-     - ./htmlcov:/project/htmlcov
