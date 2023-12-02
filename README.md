@@ -1,7 +1,7 @@
-# Containerized Python environment
+# Containerized Python web app template
 
 ```bash
-$ git clone https://github.com/DramatikMan/python-environment.git
-$ cd python-environment
+$ git clone https://github.com/DramatikMan/app-template-python.git
+$ cd app-template-python
 $ docker compose up
 ```
