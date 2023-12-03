@@ -1,4 +1,4 @@
-ARG DOCKER_REGISTRY
+ARG DOCKER_REGISTRY="https://docker.io/library"
 FROM python:3.12-slim AS base
 SHELL ["/bin/bash", "-c"]
 WORKDIR /project
@@ -11,7 +11,7 @@ RUN apt update \
 
 ################## builder ##################
 FROM base AS builder
-ARG PYTHON_INDEX_URL
+ARG PYTHON_INDEX_URL="https://pypi.org/simple"
 ENV PIP_DISABLE_VERSION_CHECK=1 \
     PIP_NO_CACHE_DIR=1 \
     PIP_INDEX_URL=$PYTHON_INDEX_URL
