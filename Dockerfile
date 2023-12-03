@@ -1,16 +1,17 @@
-ARG DOCKER_REGISTRY="https://docker.io/library"
-FROM python:3.12-slim AS base
+ARG DOCKER_REGISTRY="docker.io/library"
+FROM $DOCKER_REGISTRY/python:3.12-slim AS base
 SHELL ["/bin/bash", "-c"]
 WORKDIR /project
 ENV PYTHONPATH "${PYTHONPATH}:/project"
 USER 0
 
+################## builder ##################
+FROM base AS builder
+
 RUN apt update \
     && apt install --no-install-recommends -y build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-################## builder ##################
-FROM base AS builder
 ARG PYTHON_INDEX_URL="https://pypi.org/simple"
 ENV PIP_DISABLE_VERSION_CHECK=1 \
     PIP_NO_CACHE_DIR=1 \

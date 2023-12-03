@@ -3,8 +3,6 @@ services:
   main:
     build:
       args:
-        DOCKER_REGISTRY: "https://docker.io/library"
-        PYTHON_INDEX_URL: "https://pypi.org/simple"
         build_env: dev
       context: .
       target: builder
