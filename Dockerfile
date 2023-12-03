@@ -1,3 +1,4 @@
+################## base ##################
 ARG DOCKER_REGISTRY="docker.io/library"
 FROM $DOCKER_REGISTRY/python:3.12-slim AS base
 SHELL ["/bin/bash", "-c"]
