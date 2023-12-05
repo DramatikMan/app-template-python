@@ -15,7 +15,7 @@ dependencies = [
 
 [tool.pdm.dev-dependencies]
 dev = [
-    "ruff>=0.1.6",
+    "ruff>=0.1.7",
     "mypy>=1.7.1",
     "pytest>=7.4.3",
     "pytest-cov>=4.1.0",
