@@ -2,7 +2,11 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Config(BaseSettings):
-    model_config = SettingsConfigDict(env_prefix="APP_", env_nested_delimiter="__")
+    model_config = SettingsConfigDict(
+        env_prefix="APP_",
+        env_nested_delimiter="__",
+        env_file="values.env",
+    )
 
     DEV: bool = False
 
