@@ -18,7 +18,7 @@ ENV PIP_DISABLE_VERSION_CHECK=1 \
     PIP_NO_CACHE_DIR=1 \
     PIP_INDEX_URL=$PYTHON_INDEX_URL
 
-RUN pip install "pip==23.3.2" --upgrade \
+RUN pip install "pip==24.0" --upgrade \
     && pip install "pdm==2.12.3" \
     && pdm config check_update false \
     && pdm config pypi.url $PYTHON_INDEX_URL \
